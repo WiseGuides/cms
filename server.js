@@ -28,6 +28,7 @@ const repos = require('./src/repositories');
 require('./src/routes/')(app, repos, urlencodedParser);
 
 app.get('*', async (req, res) => {
+    console.log('...');
     // destructure the request and extract pathname and query params
     const { pathname, query } = parse(req.url, true);
     // get the promise of findContent and return the data

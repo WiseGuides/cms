@@ -43,6 +43,8 @@ class ContentRepository {
     }
 
     getBySlug(slug) {
+        console.log(slug);
+
         return this.dao.get(`SELECT uuid,parent_id,type_id,category_id,layout_id,created_by,updated_by,plugins,title,slug,content,description,image,meta_title,meta_description,additional_attributes,created_on,updated_on,published_on FROM content WHERE slug = ?`, [slug]);
     }
 

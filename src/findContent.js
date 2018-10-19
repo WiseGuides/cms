@@ -18,16 +18,16 @@ const compile = (source, properties = {}) => {
 const parseAndReplaceProperties = (attributes, properties = {}) => ({ ...properties, ...JSON.parse(attributes) })
 
 // in case we don't have additional attributes, we need to send a set of fake ones
-const resolveAttributes = attribs => attribs === '' ? '{"k":"v"}' : attribs;
+const resolveAttributes = attribs => attribs === '' || attribs === undefined || attribs === null ? '{"k":"v"}' : attribs;
 
 module.exports = async (path = '/') => {
     let view = `/${scrubPathname(path)}`;
-    console.log(view);
+
     let result = {
         status: 404,
         content: '404'
     };
-    const layout = await fs.readFile('static/index.html', 'utf8');
+    const layout = await fs.readFile('views/index.html', 'utf8');
     let data
     try {
         result.status = 200;

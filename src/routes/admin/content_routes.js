@@ -1,7 +1,7 @@
 const path = require('path').join(__dirname, '../../../views');
 
 // replace non-alphanumeric with empty string; replace spaces with dashes; lower case string and return
-const toSlug = str => str.replace(/[^\w\s]/gi, '').replace(/\s+/g, '-').toLowerCase();
+const toSlug = str => '/' + str.replace(/[^\w\s]/gi, '').replace(/\s+/g, '-').toLowerCase();
 
 module.exports = (app, urlencodedParser, repo) => {
     app.get('/admin/content/form', (req, res) => {
