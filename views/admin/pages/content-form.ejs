@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body>
+    <% include ../partials/header %>
+
+    <div class="container-fluid">
+        <div class="row">
+            <% include ../partials/side-nav %>
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <% include ../partials/body-title %>
+
+                <form method="POST" action="/admin/content">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="contentTitle">Title</label>
+                                <input type="input" class="form-control" name="title" id="contentTitle" placeholder="name@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="contentType">Type</label>
+                                <select id="contentType" class="form-control" name="type">
+                                    <option selected value="">Choose...</option>
+                                    <option>page</option>
+                                    <option>category</option>
+                                    <option>tag</option>
+                                    <option>image</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="contentMetaTitle">Meta Title</label>
+                                <input type="input" class="form-control" name="meta_title" id="contentMetaTitle"
+                                    placeholder="name@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="contentCategory">Category</label>
+                                <select id="contentCategory" class="form-control" name="category">
+                                    <option selected value="">Choose...</option>
+                                    <option>blog</option>
+                                    <option>category</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="contentDescription">Description</label>
+                                <textarea class="form-control" id="contentDescription" rows="3" name="description"></textarea>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="contentMetaDescription">Meta Description</label>
+                                <textarea class="form-control" id="contentMetaDescription" rows="3" name="meta_description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="content">Content</label>
+                                <textarea class="form-control" id="content" rows="30" name="content"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-block btn-primary">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </main>
+        </div>
+    </div>
+
+    <!-- http://thednp.github.io/bootstrap.native/v4.html -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap.native@2.0.23/dist/bootstrap-native-v4.min.js"></script>
+</body>
+
+</html>
